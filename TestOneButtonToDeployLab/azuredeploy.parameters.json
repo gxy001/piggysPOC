@@ -1,0 +1,93 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "newLabName": {
+      "value": "FabrikamDemoLab"
+    },
+    
+    // parameters to set lab policies
+    "labVmShutDownTime": {
+      "value": "21:00"
+    },
+    "maxAllowedVmsPerUser": {
+      "value": 10
+    },
+    "maxAllowedVmsPerLab": {
+      "value": 100
+    },
+    "allowedVmSizes": {
+      "value": "\"Standard_A2\", \"Standard_A4\""
+    },
+    
+    // parameters to set the private artifact repo
+    "artifactRepoUri": {
+        "value": "https://github.com/Azure/azure-devtestlabtest.git"
+    },
+    "artifactRepoFolder": {
+        "value": "AzureConDemo"
+    },
+    "artifactRepoBranch": {
+        "value": ""
+    },
+    "artifactRepoDisplayName": {
+        "value": "FabrikamPrivateRepo"
+    },
+    "artifactRepoSecurityToken": {
+        "value": "73df737eaa46c10608159fde29fc14b3b5212ed5" 
+    },
+    "artifactRepoType": {
+        "value": "GitHub"
+    },
+    
+    // parameters to create the 1st VM to be created in the lab
+    "pilotVMName": {
+      "value": "TestBox001"
+    },
+    "pilotVMTemplateName": {
+      "value": "Windows Server 2012 R2 Datacenter"
+    },
+    
+    // parameters to VM properties used for all the VMs to be created in the lab
+    "VMSize": {
+      "value": "Standard_A2"
+    },
+    "username": {
+      "value": "testlab"
+    },
+    "password": {
+      "value": "<3DevTestLabs!"
+    },
+    
+    // parameters for the 3 custom VM images (aka. Templates) to be created in the lab
+    "devBoxTemplateName": {
+      "value": "Fabrikam Dev Box"
+    },
+    "devBoxTemplateDescription": {
+      "value": "Fabrikam Dev box environment"
+    },
+    "testBoxTemplateName": {
+      "value": "Fabrikam Test Box"
+    },
+    "testBoxTemplateDescription": {
+      "value": "Fabrikam Test box environment"
+    },
+    "goldenImageTemplateName": {
+      "value": "Fabrikam Latest Testing Build 0219"
+    },
+    "goldenImageTemplateDescription": {
+      "value": "Latest testing build 100219 from VSO"
+    },
+    
+    // parameters for the 3 new VMs to be created in the lab using the new custom VM images respectively
+    "devBoxVMName": {
+      "value": "DevBox001"
+    },
+    "testBoxVMName": {
+      "value": "TestBox002"
+    },
+    "goldenImageVMName": {
+      "value": "TestLatest0219"
+    }
+  }
+}
